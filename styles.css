@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+ *{
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins" , sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #da5c6f;
+    color: #ffff;
+    padding: 10px 80px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.logo img{
+    width:50px;
+}
+.navbar{
+    display: flex;
+    gap: 20px;
+}
+.navbar a{
+    font-weight: 600;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffff;
+    transition: 0.3s;
+    position: relative;
+}
+.navbar li{
+    position: relative;
+}
+.navbar a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #fa69b1 ;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+.navbar a:hover::after{
+    width:100%;
+}
+.header-btn a{
+    padding: 10px 20px;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+.header-btn .Sign-in{
+    background-color: #e28593;
+    color: #fff;
+    border-radius: 0.5rem;
+    text-wrap: nowrap;
+}
+.header-btn .Sign-in:hover{
+    background-color: #e07484;
+}
+.header-btn .Sign-up{
+    color: #ffff;
+    text-decoration: none;
+}
+.Home 
+{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(background.1.jpg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 100px;
+    color: #ffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+
+}
+.text{
+    position: relative;
+    z-index: 2;
+}
+.text h1{
+    font-size: 3.5rem;
+    letter-spacing: .5px;
+    line-height: 1.2;
+    color: #f0559d;
+}
+.text span{
+        color: #fff;
+    }
+    .text p{
+        margin: 0.5rem 0 1.5rem;
+        font-size: 2rem;
+        max-width: 500px;
+        color: rgb(96, 172, 243);
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+
+    }  
+    .heading{
+        text-align: center;
+        margin: 50px 0;
+    }
+    .heading span{
+        font-weight: 500;
+        font-size: x-large;
+        text-transform: uppercase;
+        color: rgb(96, 172, 243);
+    }
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    background-color: rgb(181, 210, 238);
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.tools-container{
+    display: grid;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 2rem;
+    padding: 0 50px;
+    margin: 3rem 0;
+}
+.tools-container button{
+    padding: 12px;
+    background-color: #f0559d;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tools-container img{
+ border-radius: 50px;    
+ width: 30%;
+ height: 25%;
+}
+
+.about-container {
+    display: flex;  /* Flexbox for side-by-side layout */
+    align-items: center;  /* Align items vertically */
+    justify-content: space-between;  /* Space between image and text */
+    gap: 3rem;  /* Space between image and text */
+    padding: 0 50px;
+    margin-top: 3rem;
+}
+
+.about-img {
+    flex: 1;  /* Equal width */
+    max-width: 25%;
+
+}
+
+.about-img img {
+    width: 100%;  /* Responsive width */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 1;
+    max-width: 80%;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text .btn {
+    background: #0f8163;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img, .about-text {
+        max-width: 100%;
+    }
+}
+
+.reviews {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.review-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.review-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.review-box h3 {
+    margin-bottom: 5px;
+}
+
+.review-form {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-form input, .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review-form button {
+    width: 100%;
+    padding: 10px;
+    background: #ff6699;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background: #ff3366;
+}
+
+.home 
+{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 100px;
+    color: #ffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+
+}
+
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #d78d98; /* Adjust the opacity for dimming */
+    z-index: -1; /* Place it behind the text */
+}
+
+  
+/* baby-care-info*/
+
+.baby-care-info h1{
+    color: rgb(96, 172, 243);
+}
+.baby-care-info ul{
+    font-size: medium;
+}
+
+.baby-care-info .btn{
+    background: #da5c6f;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    display: inline-block;   
+}
+/* baby-info*/
+.baby-info .Home .text{
+    color: #fff;
+}
+
+.baby-info .btn{
+    background: #da5c6f;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    display: inline-block;   
+}
+
+/* yoga info*/
+.yoga-info h1{
+    color: rgb(96, 172, 243);
+}
+.yoga-info ul{
+    font-size: medium;
+}
+
+.yoga-info .btn{
+    background: #da5c6f;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    display: inline-block;   
+}

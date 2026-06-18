@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Nest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+<script>document.addEventListener("DOMContentLoaded", function () {
+    const chatButton = document.querySelector(".feature .btn"); // Selects the Chat Now button
+    const inputField = document.querySelector(".feature input[type='text']");
+    
+    // Predefined chatbot responses
+    const responses = {
+        "hello": "Hello! How can I assist you today?",
+        "pregnancy symptoms": "Common pregnancy symptoms include nausea, fatigue, and cravings.",
+        "exercise": "Light exercises like walking and prenatal yoga are great during pregnancy.",
+        "nutrition": "Eating a balanced diet with fruits, vegetables, and proteins is essential.",
+        "doctor": "It's recommended to visit your doctor for regular checkups.",
+        "bye": "Goodbye! Stay healthy and take care 😊"
+    };
+
+    // Function to handle chatbot response
+    function chatResponse() {
+        let userMessage = inputField.value.trim().toLowerCase(); // Get user input and convert to lowercase
+        if (userMessage === "") return; // Ignore empty input
+
+        // Find response or default message
+        let botReply = responses[userMessage] || "I'm not sure about that. Please consult a doctor for better guidance.";
+
+        // Display chat interaction in an alert (basic response system)
+        alert(`You: ${userMessage}\nChatbot: ${botReply}`);
+              // Clear input field
+              inputField.value = "";
+    }
+
+    // Event listener for clicking the "Chat Now" button
+    chatButton.addEventListener("click", chatResponse);
+
+    // Event listener for pressing "Enter" in the input field
+    inputField.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            chatResponse();
+     }
+});
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the buttons
+    const signUpButton = document.querySelector(".header-btn .Sign-up");
+    const signInButton = document.querySelector(".header-btn .Sign-in");
+
+    // Function to handle Sign Up click
+    function handleSignUp() {
+        alert("Sign Up clicked! Redirecting to the registration page...");
+        // You can replace the alert with a redirect: window.location.href = "signup.html";
+    }
+
+    // Function to handle Sign In click
+    function handleSignIn() {
+        alert("Sign In clicked! Redirecting to the login page...");
+        // You can replace the alert with a redirect: window.location.href = "signin.html";
+    }
+
+    // Add event listeners
+    signUpButton.addEventListener("click", handleSignUp);
+    signInButton.addEventListener("click", handleSignIn);
+});
+
+document.getElementById("reviewForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    let name = document.getElementById("name").value;
+    let review = document.getElementById("review").value;
+
+    if (name && review) {
+        let reviewContainer = document.querySelector(".reviews-container");
+
+        let newReview = document.createElement("div");
+        newReview.classList.add("review-box");
+
+        newReview.innerHTML = `
+            <img src="default-user.jpg" alt="User Image">
+            <h3>${name}</h3>
+            <p>"${review}"</p>
+        `;
+
+        reviewContainer.appendChild(newReview);
+
+        document.getElementById("name").value = "";
+        document.getElementById("review").value = "";
+        document.getElementById("successMessage").style.display = "block";
+
+        setTimeout(() => {
+            document.getElementById("successMessage").style.display = "none";
+        }, 3000);
+    }
+});
+
+        </script>
+    
+    
+    <header>
+        <a href="#" class="logo">
+            <img src="logo.1.png" alt="Logo">
+        </a>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="pregnancy-tips"><a href="#pregnancy">Pregnancy</a></a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#advice">Advice</a></li>
+            <li><a href="#forum">Community Forum</a></li>
+        </ul>
+
+        <div class="header-btn">
+            <a href="# " class="Sign-up">Sign up</a>
+            <a href="#" class="Sign-in">Sign in</a>
+        </div>
+    </header>
+    <section class="Home" id="Home">
+        <div class="text">
+            <h1><span>Welcome</span> to <br>
+            Baby Nest!</h1>
+            <p>Your Journey to Motherhood Begins Here!</p>
+        </div>
+        </section>
+        <section class="tools" id="tools"></section>
+    <div class="heading">
+        <span>Popular Tools</span>
+    </div>
+    <div class="tools-container">
+        <!-- Features Section -->
+        
+        <!-- Pregnancy Tracker -->
+        <div class="feature">
+            <img src="calender.webp" alt="Pregnancy Tracker">
+            <h2>Track Your Pregnancy</h2>
+            <p>Enter your due date to get personalized updates.</p>
+            <input type="date">
+            <a href="baby-info.html"><button class="btn">Track Now</button></a>
+        </div>
+
+        <!-- Baby care -->
+        <div class="feature">
+            <img src="baby bottel.webp" alt="Baby Care">
+            <h2>Know about your baby</h2>
+            <p>Get instant answers to your questions.</p>
+            <a href="baby-care.html"><button class="btn">Know more</button></a>
+        </div>
+        <!-- Self Care -->
+        <div class="feature">
+            <img src="yoga.webp" alt="Self-Care">
+            <h2>Physical Benefits</h2>
+            <p>Promotes relaxation and emotional balance.</p>
+            <a href="yoga-benefits.html"><button class="btn">Know more</button></a>
+        </div>
+
+        <!-- Chatbot -->
+        <div class="feature">
+            <img src="chatbot.webp" alt="Chatbot">
+            <h2>Ask Our Pregnancy Chatbot</h2>
+            <p>Get instant answers to your pregnancy questions.</p>
+            <input type="text" placeholder="Enter symptom...">
+            <button class="btn">Chat Now</button>
+        </div>
+
+
+    </div>
+
+   <!-- About Section -->
+<section class="about" id="about">
+    <div class="heading">
+        <span>About Us</span>
+        <h1>Baby Nest</h1>
+    </div>
+    <div class="about-container">
+        <div class="about-img">
+            <img src="about.webp" alt="About Baby Nest">
+        </div>
+        <div class="about-text">
+            <p>
+                Welcome to Baby Nest, your trusted companion on the beautiful journey of motherhood!<br>
+                We are dedicated to providing expecting mothers and their families with valuable resources, expert advice, and a supportive community.<br>
+                Our platform offers a pregnancy tracker, baby name finder, expert guidance, and a vibrant community forum where moms-to-be can connect, share experiences, and seek support.<br>
+                Whether you're looking for health tips, emotional well-being support, or simply a space to celebrate each milestone, we’re here for you every step of the way.<br>
+                Join us and embrace the joy of pregnancy with confidence and care!💕👶✨
+            </p>
+            <a href="https://wa.me/8919274963" class="btn">WhatsApp at 8919274963</a>
+        </div>
+    </div>
+</section>
+<!-- Reviews Section -->
+<section class="reviews" id="reviews">
+    <div class="heading">
+        <span>What Parents Say</span>
+        <h1>Reviews</h1>
+    </div>
+
+    <div class="reviews-container">
+        <!-- Sample Review 1 -->
+        <div class="review-box">
+            <img src="review1.jpeg" alt="User Image">
+            <h3>Emma Johnson</h3>
+            <p>"Baby Nest has been a lifesaver! The pregnancy tracker and expert advice helped me a lot."</p>
+        </div>
+
+        <!-- Sample Review 2 -->
+        <div class="review-box">
+            <img src="review2.jpeg" alt="User Image">
+            <h3>Michael Smith</h3>
+            <p>"I love the baby care tips section. It gave me great insights on how to take care of my newborn!"</p>
+        </div>
+
+        <!-- Sample Review 3 -->
+        <div class="review-box">
+            <img src="review3.jpeg" alt="User Image">
+            <h3>Sophia Davis</h3>
+            <p>"The community forum is amazing! I connected with other moms and got so much support."</p>
+        </div>
+    </div>
+
+    <!-- Review Submission Form -->
+    <div class="review-form">
+        <h2>Leave a Review</h2>
+        <form id="reviewForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="review" placeholder="Write your review here..." required></textarea>
+            <button type="submit" class="btn">Submit Review</button>
+        </form>
+        <p id="successMessage" style="display:none; color: green;">Thank you for your review!</p>
+    </div>
+</section>
+
+<div class="copyright">
+    <p>&#169; Baby Nest || All Rights Reserved</p>
+
+<div class="social">
+    <a href="#">
+        <i class="bx bxl-facebook"></i>
+    </a>
+    <a href="#">
+        <i class="bx bxl-twitter"></i>
+    </a>
+    <a href="#">
+        <i class="bx bxl-instagram"></i>
+    </a>
+</div>
+
+</div>
+
+</body>
+
+</html>
